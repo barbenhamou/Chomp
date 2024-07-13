@@ -70,7 +70,11 @@ def computer_eating(eaten_rect: tuple):
     if eaten_rect == (0, 0):
         loser("PLAYER")
 
-    best_move = find_best_move()
+    if grid[1][1].color != ORANGE:
+            best_move = (1,1)
+    else:
+        best_move = find_best_move()
+        
     if best_move == (0, 0):
         loser("COMPUTER")
         
